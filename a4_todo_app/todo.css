@@ -1,0 +1,102 @@
+/* Roboto Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
+
+body {
+  font-family: 'Roboto', serif;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Title Style */
+.title-container {
+  margin-bottom: 50px;
+}
+
+.page-title {
+  font-size: 32px;
+  font-weight: 300;
+}
+
+/* Form Style */
+.input-container {
+  margin-bottom: 50px;
+}
+.input-container form {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+input[type="text"] {
+  width: 60%;
+  border: none;
+  border-bottom: 1px solid teal;
+  font-size: 16px;
+}
+
+input[type="submit"] {
+  width: 30%;
+  background: teal;
+  padding: 10px 30px;
+  border: 1px solid teal;
+  color: white;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background: white;
+  color: teal;
+}
+
+/* List Style */
+.todo-container {
+}
+
+ul.todo-list {
+  list-style: none;
+  width: 50%;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 20px;
+  background-color: #c5cfe5;
+  width: 90%;
+  padding: 2% 5%;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+button.delete-button {
+  background-color: none;
+  padding: 5px 10px;
+  color: red;
+  border: 1px solid red;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.delete-button:hover {
+  background-color: red;
+  color: white;
+}
+
+/* Completed */
+.completed div {
+  text-decoration: line-through;
+  color: #a0a4aa;
+}
