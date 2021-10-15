@@ -1,0 +1,29 @@
+<!doctype html>
+<head>
+  <title>Connect 4</title>
+  <link href="connect4.css" rel="stylesheet">
+</head>
+<body>
+  
+<div id="instructions-container">
+  <p id="instructions">To play the game, enter two different colors and hit Start A New Game Button. If no colors are entered, game will start with default red and blue colors.</p>
+</div>
+
+<div id="game-form-container">
+  <form id="game-form">
+    <input id="p1-color" name="p1color" placeholder="Player 1 Color" type="text"/>
+    <input id="p2-color" name="p2color" placeholder="Player 2 Color" type="text"/>
+    <input type="submit" id="start-button" value="Start A New Game"/>
+  </form>
+</div>
+  
+
+
+<div id="game">
+  <table id="board"></table>
+</div>
+
+<script src="connect4.js"></script>
+
+</body>
+</html>
