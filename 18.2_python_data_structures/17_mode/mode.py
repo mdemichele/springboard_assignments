@@ -11,3 +11,16 @@ def mode(nums):
         >>> mode([2, 2, 3, 3, 2])
         2
     """
+    dict = {}
+    
+    # Fill the dictionary with frequencies 
+    for val in nums:
+        dict[val] = dict.get(val, 0) + 1
+    
+    # Calculate max frequency 
+    maxToReturn = max(dict.values())
+    
+    # Loop through dict and find where frequency occurs 
+    for (val, count) in dict.items():
+        if maxToReturn == count:
+            return val
