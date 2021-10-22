@@ -7,3 +7,5 @@ def capitalize(phrase):
         >>> capitalize('only first word')
         'Only first word'
     """
+    returnPhrase = phrase[0].swapcase()
+    return returnPhrase + phrase[1:]
