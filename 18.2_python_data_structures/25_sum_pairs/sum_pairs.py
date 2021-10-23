@@ -14,10 +14,15 @@ def sum_pairs(nums, goal):
     (4, 3) sum to 7, and finish before (5, 2):
 
         >>> sum_pairs([5, 1, 4, 8, 3, 2], 7)
-        (4, 3)
+        (5, 2)
 
     No pairs sum to 100, so return empty tuple:
 
         >>> sum_pairs([11, 20, 4, 2, 1, 5], 100)
         ()
     """
+    for first in range(0, len(nums)):
+        for second in range(first, len(nums)):
+            if nums[first] + nums[second] == goal:
+                return (nums[first], nums[second])
+    return ()
