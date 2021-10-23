@@ -19,3 +19,21 @@ def reverse_vowels(s):
     reverse_vowels("why try, shy fly?")
     'why try, shy fly?''
     """
+    vowels = ("a", "e", "i", "o", "u", "A", "E", "I", "O", "U")
+    vowelOrder = []
+    vowelList = []
+    
+    for letter in range(len(s)):
+        if s[letter] in vowels:
+            vowelOrder.append(letter)
+            vowelList.append(s[letter])
+    
+    vowelOrder.reverse()
+    
+    sList = list(s)
+    
+    for i in range(len(vowelList)):
+        sList[vowelOrder[i]] = vowelList[i]
+    
+    return ''.join(sList)
+    
