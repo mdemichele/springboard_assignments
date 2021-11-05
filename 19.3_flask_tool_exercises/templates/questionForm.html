@@ -1,0 +1,21 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class="flashes">
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+<form action="/answer" method="POST">
+    <input type="hidden" name="questionNum" value="{{ questionNum }}" />
+    <input name="question" placeholder="{{ question.question }}" />
+    <input type="submit" value="Submit Answer"/>
+</form>
+{% endblock %}
