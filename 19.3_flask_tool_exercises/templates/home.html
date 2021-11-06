@@ -6,7 +6,7 @@
 <div id="instructions">
 instructions go here 
 </div>
-<button id="start-survey-button">
-    <a href="/question/0">Start Survey</a>
-</button>
+<form action="/reset" method="POST">
+  <input type="submit" id="start-survey-button" value="Start Survey"/>
+</form>
 {% endblock %}
