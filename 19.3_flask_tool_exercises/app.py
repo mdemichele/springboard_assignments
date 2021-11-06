@@ -1,4 +1,4 @@
-from flask import Flask, flash, request, redirect, render_template 
+from flask import Flask, flash, request, redirect, render_template, session
 from flask_debugtoolbar import DebugToolbarExtension
 from surveys import Question, Survey, surveys 
 
@@ -10,7 +10,6 @@ app.config['SECRET_KEY'] = "oh-so-secret"
 debug = DebugToolbarExtension(app)
 
 # Users answers are stored in the reponses list 
-responses = []
 correctQuestion = 0
 
 # root route 
@@ -18,6 +17,13 @@ correctQuestion = 0
 def display_root():
     """Renders home page"""
     return render_template("home.html")
+    
+# Reset Responses session and redirect 
+@app.route("/reset", methods=["POST"])
+def reset_form():
+    # Reset reponses 
+    session["responses"] = []
+    return redirect("/question/0")
 
 # questions route
 @app.route("/question/<questionNum>")
@@ -50,7 +56,9 @@ def store_answer():
     currentQuestion = request.form["questionNum"]
     
     # Add answer to the responses list 
+    responses = session["responses"]
     responses.append(answer)
+    session["responses"] = responses
     
     # Increment currentQuestion 
     currentQuestion = int(currentQuestion) + 1
@@ -62,3 +70,4 @@ def store_answer():
         return redirect(f"/question/{currentQuestion}")
     else:
         return render_template("thankyou.html")
+        
